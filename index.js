@@ -13,13 +13,26 @@ $ licenced # brings up a helpful multiselect prompt
 Examples
 $ licenced mit`);
 
-const writeLicense = (username, name) => {
-    
+const writeLicense = (fullName, index) => {
+
     const {resolve} = require("path");
-    const {createWriteStream} = require("fs");
-    const licenses = require("./licenses.json");
     const {green} = require("chalk");
-    
+    const {licenseList} = require("./licenses.js");
+    const fs = require("fs");
+
+    const year = (new Date).getFullYear();
+    const license = licenseList[index];
+    const text = `Copyright ${year} ${fullName}
+
+${license}`;
+
+    fs.writeFile(resolve(process.cwd(), "LICENSE"), text, (err) => {
+        if(err) {
+            return err;
+        }
+        console.log("yay.")
+    })
+
 };
 
 /**
@@ -32,16 +45,13 @@ if (!cli.input.length) {
     const {registerPrompt, prompt} = require("inquirer");
     const fuzzy = require("fuzzy");
 
-    const licenses = [
+    const licenseList = [
         "Apache 2.0",
-        "BSD 3",
-        "BSD 2",
+        "BSD-2-Clause",
+        "BSD-3-Clause",
         "GNU General Public License",
-        "GNU Library",
         "MIT",
         "Mozilla Public License 2.0",
-        "Common Development and Distribution License",
-        "Eclipse Public License"
     ];
 
     console.log();
@@ -49,23 +59,24 @@ if (!cli.input.length) {
     prompt([
         {
             type: "input",
-            name: "name",
+            name: "fullName",
             message: "Full Name:",
         }, {
             type: "list",
-            name: "input",
+            name: "licenseName",
             message: "Please select the license to be applied on this project",
-            choices: licenses.map(name => ({name})),
+            choices: licenseList.map(name => ({name})),
             pageSize: 10,
             highlight: true,
             searchable: true,
             source: (answersSoFar, input = "") =>
                 Promise.resolve(
-                    fuzzy.filter(input, licenses).map(({original}) => original)
+                    fuzzy.filter(input, licenseList).map(({original}) => original)
                 ),
         }
-    ]).then(({name, input}) => {
-        writeLicense(name, input);
+    ]).then(({fullName, licenseName}) => {
+        licenseIndex = licenseList.indexOf(licenseName);
+        writeLicense(fullName, licenseIndex);
     });
 
 } else {
