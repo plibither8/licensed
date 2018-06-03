@@ -1,0 +1,28 @@
+{
+  "name": "licensed",
+  "version": "0.0.1",
+  "description": "licensed is a CLI to help you add licenses to your projects",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/plibither8/licensed.git"
+  },
+  "keywords": [
+    "license",
+    "cli",
+    "mit"
+  ],
+  "author": "plibither8",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/plibither8/licensed/issues"
+  },
+  "homepage": "https://github.com/plibither8/licensed#readme",
+  "devDependencies": {
+    "commander": "^2.15.1",
+    "inquirer": "^6.0.0"
+  }
+}
