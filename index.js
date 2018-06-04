@@ -32,20 +32,32 @@ const writeLicense = (fullName, index) => {
             console.log(red.bold(`\n❌ An error occured. Please try again.`));
             return err;
         }
-        console.log(green.bold(`\n✔️ Successfully created LICENSE file with ${licenseNames[index]}!`));
+        console.log(green.bold(`\n✔️ Successfully created LICENSE file with ${licenseNames[index]}`));
     });
 
 };
+
+function search(answers, input) {
+    const fuzzy = require("fuzzy");
+    input = input || '';
+    return new Promise((resolve) => {
+        const fuzzyResult = fuzzy.filter(input, licenseNames);
+        resolve(fuzzyResult.map(function (el) {
+            return el.original;
+        }));
+    });
+}
 
 /**
  * If called without inputs,
  * get a list of available inputs and prompt the
  * user to choose some stuff.
  */
+
 if (!cli.input.length) {
 
     const {registerPrompt, prompt} = require("inquirer");
-    const fuzzy = require("fuzzy");
+    registerPrompt("autocomplete", require('inquirer-autocomplete-prompt'));
 
     console.log();
 
@@ -53,19 +65,17 @@ if (!cli.input.length) {
         {
             type: "input",
             name: "fullName",
-            message: "Full Name:",
+            message: "Full name",
         }, {
-            type: "list",
-            name: "licenseName",
-            message: "Please select the license to be applied on this project",
+            type: "autocomplete",
+            name: "licenseName",    
+            message: "License to be applied to this project",
             choices: licenseNames.map(name => ({name})),
             pageSize: 10,
             highlight: true,
             searchable: true,
-            source: (answersSoFar, input = "") =>
-                Promise.resolve(
-                    fuzzy.filter(input, licenseNames).map(({original}) => original)
-                ),
+            source: search,
+            validate: (val) => val ? true : 'Type something!'
         }
     ]).then(({fullName, licenseName}) => {
         licenseIndex = licenseNames.indexOf(licenseName);
@@ -73,5 +83,5 @@ if (!cli.input.length) {
     });
 
 } else {
-    console.log("Inputs are not as of now");
+    console.log(cli.input);
 }
