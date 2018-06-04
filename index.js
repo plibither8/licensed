@@ -1,25 +1,25 @@
 #!/usr/bin/env node
 const meow = require("meow");
-
-const cli = meow(`This is a really simple script to help
-you add a license to your open source project. Read more
-about the different types of open source licenses on
-https://opensource.org/licenses
+const cli = meow(`Read more about the different types of 
+open source licenses on https://opensource.org/licenses
 
 Usage
 $ licensed # brings up a helpful prompt
-$ licensed <license-name>
+$ licensed <license-name> <your-full-name>
 
 Examples
-$ licensed mit
+$ licensed mit "Mihir Chaturvedi"
 
 Copyright 2018 Mihir Chaturvedi`);
 
+const {registerPrompt, prompt} = require("inquirer");
+const {red, green, bold} = require("chalk");
+const fuzzy = require("fuzzy");
 const {licenseNames} = require("./licenses.js");
+
 const writeLicense = (fullName, index) => {
     
     const {resolve} = require("path");
-    const {red, green, bold} = require("chalk");
     const {licenseList} = require("./licenses.js");
     const fs = require("fs");
 
@@ -38,7 +38,6 @@ const writeLicense = (fullName, index) => {
 };
 
 function search(answers, input) {
-    const fuzzy = require("fuzzy");
     input = input || '';
     return new Promise((resolve) => {
         const fuzzyResult = fuzzy.filter(input, licenseNames);
@@ -56,11 +55,9 @@ function search(answers, input) {
 
 if (!cli.input.length) {
 
-    const {registerPrompt, prompt} = require("inquirer");
     registerPrompt("autocomplete", require('inquirer-autocomplete-prompt'));
 
     console.log();
-
     prompt([
         {
             type: "input",
@@ -74,14 +71,56 @@ if (!cli.input.length) {
             pageSize: 10,
             highlight: true,
             searchable: true,
-            source: search,
-            validate: (val) => val ? true : 'Type something!'
+            source: search
         }
     ]).then(({fullName, licenseName}) => {
         licenseIndex = licenseNames.indexOf(licenseName);
         writeLicense(fullName, licenseIndex);
     });
 
-} else {
-    console.log(cli.input);
+}
+
+/**
+ * If called with an input
+ * fuzzy search amongst license names
+ * and return the first result
+ */
+
+else {
+
+    const input = cli.input;
+
+    let searchTerm = "";
+    let i = 0;
+    do {
+        searchTerm += input[i++];
+    } while (i < input.length - 1);
+
+    const results = fuzzy
+        .filter(searchTerm, licenseNames)
+        .map(({original}) => original);
+
+    if (!results.length) {
+        console.log(red(`\n❌ No license name matching '${searchTerm}' was found.\nPlease try again with another name.`));
+        return;
+    }
+
+    const licenseIndex = licenseNames.indexOf(results[0]);
+
+    if (input.length === 1) {
+        console.log();
+        prompt([
+            {
+                type: "input",
+                name: "fullName",
+                message: "Enter your full name",
+            }
+        ]).then(({fullName}) => {
+            writeLicense(fullName, licenseIndex);
+        });
+    } else {
+        fullName = input[input.length - 1]
+        writeLicense(fullName, licenseIndex);
+    }
+
 }
