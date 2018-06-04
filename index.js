@@ -4,14 +4,14 @@ const meow = require("meow");
 const cli = meow(`This is a really simple script to help
 you add a license to your open source project. Read more
 about the different types of open source licenses on
-https:
+https://opensource.org/licenses
 
 Usage
-$ licenced # brings up a helpful prompt
-$ licenced <license-name>
+$ licensed # brings up a helpful prompt
+$ licensed <license-name>
 
 Examples
-$ licenced mit
+$ licensed mit
 
 Copyright 2018 Mihir Chaturvedi`);
 
@@ -28,7 +28,7 @@ const writeLicense = (fullName, index) => {
     const text = `Copyright ${year} ${fullName}\n\n${license}`;
 
     fs.writeFile(resolve(process.cwd(), "LICENSE"), text, (err) => {
-        if(err) {
+        if (err) {
             console.log(red.bold(`\n❌ An error occured. Please try again.`));
             return err;
         }
