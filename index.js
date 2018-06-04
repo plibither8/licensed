@@ -4,34 +4,36 @@ const meow = require("meow");
 const cli = meow(`This is a really simple script to help
 you add a license to your open source project. Read more
 about the different types of open source licenses on
-https://opensource.org/licenses.
+https:
 
 Usage
+$ licenced # brings up a helpful prompt
 $ licenced <license-name>
-$ licenced # brings up a helpful multiselect prompt
 
 Examples
-$ licenced mit`);
+$ licenced mit
 
+Copyright 2018 Mihir Chaturvedi`);
+
+const {licenseNames} = require("./licenses.js");
 const writeLicense = (fullName, index) => {
-
+    
     const {resolve} = require("path");
-    const {green} = require("chalk");
+    const {red, green, bold} = require("chalk");
     const {licenseList} = require("./licenses.js");
     const fs = require("fs");
 
     const year = (new Date).getFullYear();
     const license = licenseList[index];
-    const text = `Copyright ${year} ${fullName}
-
-${license}`;
+    const text = `Copyright ${year} ${fullName}\n\n${license}`;
 
     fs.writeFile(resolve(process.cwd(), "LICENSE"), text, (err) => {
         if(err) {
+            console.log(red.bold(`\n❌ An error occured. Please try again.`));
             return err;
         }
-        console.log("yay.")
-    })
+        console.log(green.bold(`\n✔️ Successfully created LICENSE file with ${licenseNames[index]}!`));
+    });
 
 };
 
@@ -45,15 +47,6 @@ if (!cli.input.length) {
     const {registerPrompt, prompt} = require("inquirer");
     const fuzzy = require("fuzzy");
 
-    const licenseList = [
-        "Apache 2.0",
-        "BSD-2-Clause",
-        "BSD-3-Clause",
-        "GNU General Public License",
-        "MIT",
-        "Mozilla Public License 2.0",
-    ];
-
     console.log();
 
     prompt([
@@ -65,20 +58,20 @@ if (!cli.input.length) {
             type: "list",
             name: "licenseName",
             message: "Please select the license to be applied on this project",
-            choices: licenseList.map(name => ({name})),
+            choices: licenseNames.map(name => ({name})),
             pageSize: 10,
             highlight: true,
             searchable: true,
             source: (answersSoFar, input = "") =>
                 Promise.resolve(
-                    fuzzy.filter(input, licenseList).map(({original}) => original)
+                    fuzzy.filter(input, licenseNames).map(({original}) => original)
                 ),
         }
     ]).then(({fullName, licenseName}) => {
-        licenseIndex = licenseList.indexOf(licenseName);
+        licenseIndex = licenseNames.indexOf(licenseName);
         writeLicense(fullName, licenseIndex);
     });
 
 } else {
-    console.log("no inputs rn");
+    console.log("Inputs are not as of now");
 }
