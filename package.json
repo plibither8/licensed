@@ -1,7 +1,7 @@
 {
   "name": "licensed",
   "version": "0.0.1",
-  "description": "licensed is a CLI to help you add licenses to your projects",
+  "description": "licensed is a command line interface to help you add licenses to your projects",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -19,7 +19,7 @@
     "./index.js"
   ],
   "bin": {
-    "add-gitignore": "./index.js"
+    "licensed": "./index.js"
   },
   "author": "plibither8",
   "license": "MIT",
@@ -27,14 +27,11 @@
     "url": "https://github.com/plibither8/licensed/issues"
   },
   "homepage": "https://github.com/plibither8/licensed#readme",
-  "devDependencies": {
+  "devDependencies": {},
+  "dependencies": {
     "chalk": "^2.4.1",
-    "commander": "^2.15.1",
     "fuzzy": "^0.1.3",
     "inquirer": "^6.0.0",
-    "inquirer-checkbox-plus-prompt": "^1.0.1",
-    "meow": "^5.0.0",
-    "ora": "^2.1.0",
-    "request": "^2.87.0"
+    "meow": "^5.0.0"
   }
 }
