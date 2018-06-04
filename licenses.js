@@ -57,3 +57,11 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.`
 ];
 
 exports.licenseList = licenseList;
+exports.licenseNames = [
+    "Apache 2.0",
+    "BSD-2-Clause",
+    "BSD-3-Clause",
+    "GNU General Public License",
+    "MIT",
+    "Mozilla Public License 2.0",
+];
