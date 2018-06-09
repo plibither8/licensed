@@ -1,6 +1,6 @@
 {
   "name": "licensed",
-  "version": "0.0.8",
+  "version": "1.0.0",
   "description": "licensed is a command line interface to help you add licenses to your projects",
   "main": "src/index.js",
   "scripts": {
