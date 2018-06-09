@@ -1,8 +1,8 @@
 {
   "name": "licensed",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "licensed is a command line interface to help you add licenses to your projects",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,7 +16,7 @@
     "mit"
   ],
   "bin": {
-    "licensed": "./index.js"
+    "licensed": "./src/index.js"
   },
   "author": "plibither8",
   "license": "MIT",
