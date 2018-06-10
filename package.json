@@ -2,9 +2,12 @@
   "name": "licensed",
   "version": "1.0.0",
   "description": "licensed is a command line interface to help you add licenses to your projects",
-  "main": "src/index.js",
+  "main": "lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "babel ./src --out-dir lib/",
+    "build:watch": "npm run build -- --watch",
+    "lint": "eslint ./src",
+    "lint:fix": "npm run lint -- --fix"
   },
   "repository": {
     "type": "git",
@@ -24,7 +27,12 @@
     "url": "https://github.com/plibither8/licensed/issues"
   },
   "homepage": "https://github.com/plibither8/licensed#readme",
-  "devDependencies": {},
+  "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.47",
+    "@babel/core": "^7.0.0-beta.47",
+    "@babel/preset-env": "^7.0.0-beta.47",
+    "eslint": "^4.19.1"
+  },
   "dependencies": {
     "chalk": "^2.4.1",
     "fuzzy": "^0.1.3",
