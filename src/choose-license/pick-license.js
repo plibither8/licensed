@@ -2,21 +2,15 @@ const fuzzy = require('fuzzy');
 const {registerPrompt, prompt} = require('inquirer');
 const autocompletePrompt = require('inquirer-autocomplete-prompt');
 
-const {licenses} = require('./licenses');
-const {writeLicense} = require('./write-license');
+const {licenses} = require('../licenses');
 
 const licenseNames = Object.keys(licenses);
 
-exports.chooseLicense = () => {
+exports.pickLicense = async () => {
     registerPrompt('autocomplete', autocompletePrompt);
 
-    process.stdout.write('\n');
-    prompt([
+    const {licenseName} = await prompt([
         {
-            type: 'input',
-            name: 'fullName',
-            message: 'Full name',
-        }, {
             type: 'autocomplete',
             name: 'licenseName',
             message: 'License to be applied to this project',
@@ -29,7 +23,7 @@ exports.chooseLicense = () => {
                 return fuzzyResult.map(({original}) => original);
             }
         }
-    ]).then(({fullName, licenseName}) => {
-        writeLicense(fullName, licenseName);
-    });
+    ]);
+
+    return licenseName;
 };
