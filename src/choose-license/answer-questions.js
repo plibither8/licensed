@@ -104,7 +104,7 @@ exports.answerQuestions = async () => {
     const result =
         Object.entries(licenses)
             .reduce((accumulator, [license, {attributes}]) => {
-                const score = calculateScore({attributes, secondAnswer});
+                const score = calculateScore({attributes, answer: secondAnswer});
 
                 accumulator.push([license, score]);
 
