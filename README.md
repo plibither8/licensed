@@ -7,11 +7,11 @@
 [![Made_with_love_in India](https://img.shields.io/badge/Made_with_love_in-India-DC3545.svg)](https://madewithlove.org.in/)
 
 
-> ⚖ licensed is a simple, interactive command line interface to help you quickly add a `LICENSE` file to your project.
+> ⚖ licensed is a simple, interactive command line interface to help you choose and quickly add a `LICENSE` file to your project.
 
 ![licensed demo gif](assets/demo.gif)
 
-## Usage
+## Setup
 
 Make sure you have [NodeJS](https://nodejs.org/en/) (npm 5.2+) installed on your computer. Then, setup is as simple as:
 
@@ -21,13 +21,21 @@ If you've got an older version of node (npm version < 5.2) that doesn't yet have
 
 * `$ npm i -g licensed`
 
-Use the CLI like so, by entering the license name and then your name (in single/double quotes):
+## Usage
 
-* `$ licensed mit "Mihir Chaturvedi"`
+After installation, navigate to your project directory ie. the directory you want your `LICENSE` file to be placed. Then:
 
-Running just `licensed` gives you a prompt to enter your name and a nice list of licenses to choose from. 
+* `$ licensed`
 
-Use the `--help` flag to help you out when in grave danger.
+This will bring up an option to either **initiate a questionnaire** that will aid you in choosing and appropriate license for your project, or simply choose a license from a list of available licenses.
+
+You can also use the CLI like so, by entering the license name and then your name (in single/double quotes):
+
+* `$ licensed mit "Dwight Schrute"`
+
+which will create a `LICENSE` file with the MIT License under the name Dwight Schrute.
+
+<!-- If hell breaks loose, use the `--help` flag to help you out! -->
 
 ## Available licenses to choose from (currently):
 
@@ -43,3 +51,7 @@ Use the `--help` flag to help you out when in grave danger.
 
 * If you are aware of more licenses, help expand the list by suggesting or creating a pull request with the license text and name added to the `src/licenses.js`.
 * Any other positive suggestions for this project are welcome :)
+
+## Acknowledgements
+
+* [Manuel Spagnolo](https://github.com/shikaan) for implementing the questionnaire.
