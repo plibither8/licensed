@@ -6,8 +6,8 @@ const {licenses} = require('./licenses');
 
 exports.writeLicense = (fullName, licenseName) => {
     const year = (new Date).getFullYear();
-    const license = licenses[licenseName];
-    const text = `Copyright ${year} ${fullName}\n\n${license}`;
+    const license = licenses[licenseName].value;
+    const text = `Copyright (c) ${year}, ${fullName}\n\n${license}`;
 
     fs.writeFile(resolve(process.cwd(), 'LICENSE'), text, (err) => {
         if (err) {
