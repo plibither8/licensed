@@ -61,5 +61,11 @@ typings/
 # dotenv environment variables file
 .env
 
+# IDE files
+.idea
+.vscode
+
+# babel built files
+lib
 
 # End of https://www.gitignore.io/api/node
