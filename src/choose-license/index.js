@@ -51,6 +51,6 @@ exports.chooseLicense = async () => {
     if(licenseName) {
         writeLicense(fullName, licenseName);
     } else {
-        process.stdout.write(red('\n❌ No license name matching your criteria was found.\nPlease try again.'));
+        process.stdout.write(red('\n❌ No license name matching your criteria was found.\nPlease try again.\n'));
     }
 };

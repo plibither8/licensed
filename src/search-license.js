@@ -17,7 +17,7 @@ exports.searchLicense = ({input}) => {
         .map(({original}) => original);
 
     if (!results.length) {
-        process.stdout.write(red(`\n❌ No license name matching '${searchTerm}' was found.\nPlease try again with another name.`));
+        process.stdout.write(red(`\n❌ No license name matching '${searchTerm}' was found.\nPlease try again with another name.\n`));
         return;
     }
 
