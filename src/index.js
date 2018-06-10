@@ -6,14 +6,18 @@ const {searchLicense} = require('./search-license');
 
 const cli = meow(`Read more about the different types of 
 open source licenses on https://opensource.org/licenses
+---------------------------------------------------------
+Usage:
 
-Usage
-$ licensed # brings up a helpful prompt
+$ licensed # brings up an option to start a questionnaire
+             or choose from a list of available licenses
+
 $ licensed <license-name> <your-full-name>
+---------------------------------------------------------
+Examples:
 
-Examples
 $ licensed mit "Mihir Chaturvedi"
-
+---------------------------------------------------------
 Copyright 2018 Mihir Chaturvedi`);
 
 
