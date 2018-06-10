@@ -1,7 +1,7 @@
 {
   "name": "licensed",
   "version": "1.0.0",
-  "description": "licensed is a command line interface to help you add licenses to your projects",
+  "description": "licensed is a command line interface to help you choose and add licenses to your projects",
   "main": "lib/index.js",
   "scripts": {
     "build": "babel ./src --out-dir lib/",
@@ -21,7 +21,7 @@
   "bin": {
     "licensed": "./src/index.js"
   },
-  "author": "plibither8",
+  "author": "Mihir Chaturvedi",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/plibither8/licensed/issues"
