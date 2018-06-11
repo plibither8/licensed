@@ -1,6 +1,6 @@
 # licensed
 
-[![Number of downloads](https://img.shields.io/npm/dw/licensed.svg?style=flat)](https://www.npmjs.com/package/licensed)
+[![Number of downloads](https://img.shields.io/npm/dt/licensed.svg?style=flat-square)](https://www.npmjs.com/package/licensed)
 [![Licence](https://img.shields.io/npm/l/licensed.svg?maxAge=2592000&style=flat)](LICENSE)
 [![Number of dependencies](https://img.shields.io/david/plibither8/licensed.svg?maxAge=2592000&style=flat)](https://www.npmjs.com/package/licensed?activeTab=dependencies)
 
