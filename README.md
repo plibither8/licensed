@@ -15,27 +15,60 @@
 
 Make sure you have [NodeJS](https://nodejs.org/en/) (npm 5.2+) installed on your computer. Then, setup is as simple as:
 
-* `$ npx licensed` 
+```sh
+$ npx licensed
+``` 
 
 If you've got an older version of node (npm version < 5.2) that doesn't yet have [`npx`](https://www.npmjs.com/package/npx), here's a more traditional setup:
 
-* `$ npm i -g licensed`
+```sh
+$ npm i -g licensed
+```
 
 ## Usage
 
 After installation, navigate to your project directory ie. the directory you want your `LICENSE` file to be placed. Then:
 
-* `$ licensed`
+```sh
+Usage:
+    $ licensed                  # Brings up an option to start a questionnaire or choose from a list of available licenses
+    $ licensed <license-name>   # Brings prompt to enter your name
+    $ licensed <license-name> <your-full-name>
+    $ licensed --help
+    $ licensed --version
 
-This will bring up an option to either **initiate a questionnaire** that will aid you in choosing and appropriate license for your project, or simply choose a license from a list of available licenses.
+Options:
+    --help      Show this screen
+    --version   Show version
 
-You can also use the CLI like so, by entering the license name and then your name (in single/double quotes):
+Examples:
+    $ licensed mit "Mihir Chaturvedi"
+    $ licensed mit
+```
 
-* `$ licensed mit "Dwight Schrute"`
+## Development
 
-which will create a `LICENSE` file with the MIT License under the name Dwight Schrute.
+Run:
 
-<!-- If hell breaks loose, use the `--help` flag to help you out! -->
+```sh
+$ git clone https://github.com/plibither8/licensed.git
+$ cd licensed
+$ npm link
+```
+
+This will setup a symbolic link to the CLI. Any changes in source files will now be reflected when running the `licensed` command.
+
+To lint your code, run
+
+```sh
+$ npm run lint
+```
+
+...and to build your files to `/lib` directory, run
+
+```sh
+$ npm run build
+```
 
 ## Available licenses to choose from (currently):
 
