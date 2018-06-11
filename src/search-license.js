@@ -1,6 +1,7 @@
 const {red} = require('chalk');
 const fuzzy = require('fuzzy');
 const {prompt} = require('inquirer');
+const fullname = require('fullname');
 
 const {licenses} = require('./licenses');
 const {writeLicense} = require('./write-license');
@@ -28,6 +29,7 @@ exports.searchLicense = ({input}) => {
                 type: 'input',
                 name: 'fullName',
                 message: 'Enter your full name',
+                default: fullname,
             }
         ]).then(({fullName}) => {
             writeLicense(fullName, results[0]);

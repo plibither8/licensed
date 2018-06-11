@@ -1,5 +1,6 @@
 const {red} = require('chalk');
 const {prompt} = require('inquirer');
+const fullname = require('fullname');
 
 const {writeLicense} = require('../write-license');
 
@@ -22,6 +23,7 @@ exports.chooseLicense = async () => {
             type: 'input',
             name: 'fullName',
             message: 'Full name',
+            default: fullname,
         }, {
             type: 'list',
             name: 'choose',
