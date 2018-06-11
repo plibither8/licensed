@@ -16,7 +16,7 @@ const chooseValues = {
     pick: 'pick'
 };
 
-exports.chooseLicense = async () => {
+exports.chooseLicense = async (flags) => {
     process.stdout.write('\n');
     const {fullName, choose} = await prompt([
         {
@@ -51,7 +51,10 @@ exports.chooseLicense = async () => {
     })();
 
     if(licenseName) {
-        writeLicense(fullName, licenseName);
+
+        const year = flags.hasOwnProperty('y') ? flags.y : (new Date).getFullYear();
+        writeLicense(fullName, licenseName, year);
+
     } else {
         process.stdout.write(red('\n❌ No license name matching your criteria was found.\nPlease try again.\n'));
     }

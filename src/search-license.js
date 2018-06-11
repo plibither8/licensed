@@ -6,7 +6,7 @@ const fullname = require('fullname');
 const {licenses} = require('./licenses');
 const {writeLicense} = require('./write-license');
 
-exports.searchLicense = ({input}) => {
+exports.searchLicense = ({input}, flags) => {
     let searchTerm = '';
     let i = 0;
     do {
@@ -22,6 +22,8 @@ exports.searchLicense = ({input}) => {
         return;
     }
 
+    const year = flags.hasOwnProperty('y') ? flags.y : (new Date).getFullYear();
+
     if (input.length === 1) {
         process.stdout.write('\n');
         prompt([
@@ -32,10 +34,10 @@ exports.searchLicense = ({input}) => {
                 default: fullname,
             }
         ]).then(({fullName}) => {
-            writeLicense(fullName, results[0]);
+            writeLicense(fullName, results[0], year);
         });
     } else {
         const fullName = input[input.length - 1];
-        writeLicense(fullName, results[0]);
+        writeLicense(fullName, results[0], year);
     }
 };
