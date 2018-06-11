@@ -5,7 +5,7 @@ const fs = require('fs');
 const {licenses} = require('./licenses');
 
 exports.writeLicense = (fullName, licenseName, year) => {
-    // const year = (new Date).getFullYear();
+
     const license = licenses[licenseName].value;
     const text = `Copyright (c) ${year}, ${fullName}\n\n${license}`;
 

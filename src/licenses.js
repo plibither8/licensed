@@ -3,7 +3,7 @@ const {resolve} = require('path');
 
 const licensesFolder = resolve(__dirname, '..', 'assets', 'licenses');
 
-exports.licenses = {
+const licenses = {
     'Apache 2.0': {
         value: readFileSync(resolve(licensesFolder, 'Apache 2.0'), 'utf-8'),
         attributes: {
@@ -82,3 +82,6 @@ exports.licenses = {
         }
     }
 };
+
+exports.licenses = licenses;
+exports.licenseNames = Object.keys(licenses);

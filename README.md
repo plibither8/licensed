@@ -33,12 +33,12 @@ After installation, navigate to your project directory ie. the directory you wan
 Usage:
     $ licensed                  # Brings up an option to start a questionnaire or choose from a list of available licenses
     $ licensed <license-name>   # Brings prompt to enter your name
-    $ licensed <license-name> <your-full-name> [--year | -y] <year> 
-    $ licensed --help
-    $ licensed --version
+    $ licensed <license-name> <your-full-name> [--year | -y] <year>
+    $ licensed [--list | -l]
 
 Options:
-    --year, -y <year>   The year the license is in effect
+    --year, -y <year>   Manually enter year the license is in effect
+    --list, -l          List all available licenses
     --help              Show this screen
     --version           Show version
 

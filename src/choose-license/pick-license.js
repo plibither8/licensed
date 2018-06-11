@@ -2,9 +2,7 @@ const fuzzy = require('fuzzy');
 const {registerPrompt, prompt} = require('inquirer');
 const autocompletePrompt = require('inquirer-autocomplete-prompt');
 
-const {licenses} = require('../licenses');
-
-const licenseNames = Object.keys(licenses);
+const {licenseNames} = require('../licenses');
 
 exports.pickLicense = async () => {
     registerPrompt('autocomplete', autocompletePrompt);
