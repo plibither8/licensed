@@ -87,6 +87,8 @@ $ npm run build
 * If you are aware of more licenses, help expand the list by suggesting or creating a pull request with the license text and name added to the `assets/licenses`, `src/licenses.js` and other respective files.
 * Any other positive suggestions for this project are welcome :)
 
+**Make sure to check out [CONTRIBUTING.md](.github/CONTRIBUTING.md).**
+
 ## Acknowledgements
 
 * [Manuel Spagnolo](https://github.com/shikaan) for implementing the questionnaire.
