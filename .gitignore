@@ -66,6 +66,6 @@ typings/
 .vscode
 
 # babel built files
-lib
+# lib
 
 # End of https://www.gitignore.io/api/node
