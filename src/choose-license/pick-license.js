@@ -11,7 +11,7 @@ exports.pickLicense = async () => {
         {
             type: 'autocomplete',
             name: 'licenseName',
-            message: 'License to be applied to this project',
+            message: 'View a license',
             choices: licenseNames.map((name) => ({name})),
             pageSize: 10,
             highlight: true,

@@ -1,8 +1,14 @@
-const {licenseNames} = require('./licenses');
+const {licenses} = require('./licenses');
+const {pickLicense} = require('./choose-license/pick-license.js');
+const {green} = require('chalk');
 
 exports.generateList = () => {
 
     process.stdout.write('\n');
-    licenseNames.map((name, index) => process.stdout.write(`   ${index + 1}. ${name}\n`));
+
+    pickLicense().then(name => {
+        process.stdout.write(green(`\n${name}:\n`))
+        process.stdout.write(`\n${licenses[name].value}\n`);
+    });
 
 };
