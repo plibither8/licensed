@@ -7,7 +7,7 @@ exports.generateList = () => {
     process.stdout.write('\n');
 
     pickLicense().then(name => {
-        process.stdout.write(green.bold(`\n    ${name}:\n`));
+        process.stdout.write(`\n    ${green.underline(name)}\n`);
         process.stdout.write(`\n${licenses[name].value}\n`);
     });
 
