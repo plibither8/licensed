@@ -9,7 +9,7 @@ const choices = [
     'Do not create a new LICENSE file',
     'View existing LICENSE file',
     'Overwrite current LICENSE file and create a new one'
-]
+];
 
 exports.licenseFileExists = () => {
     return existsSync(resolve(process.cwd(), 'LICENSE'));
@@ -41,6 +41,6 @@ exports.viewExistingLicense = () => {
 
 exports.licenseExistsExit = () => {
     process.stdout.write(red.bold('\n❌ LICENSE file not created.\n'));
-}
+};
 
 exports.licenseExistsPromptChoices = choices;
