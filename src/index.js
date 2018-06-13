@@ -27,7 +27,7 @@ Options:
 Examples:
     $ licensed mit "Mihir Chaturvedi"
     $ licensed apache
-    $ licensed --year 2016
+    $ licensed --year 2013-2018
 
 Read more about the different types of open
 source licenses on https://opensource.org/licenses.
