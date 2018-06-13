@@ -2,6 +2,8 @@ const {red, underline}              = require('chalk');
 const {existsSync, readFileSync}    = require('fs');
 const {prompt}                      = require('inquirer');
 const {resolve}                     = require('path');
+const boxen                         = require('boxen');
+const wrap                          = require('word-wrap');
 
 const choices = [
     'Do not create a new LICENSE file',
@@ -33,7 +35,18 @@ exports.licenseExistsPrompt = async () => {
 exports.viewExistingLicense = () => {
 
     const licenseText = readFileSync(resolve(process.cwd(), 'LICENSE'));
-    process.stdout.write(`\n    ${underline('Existing LICENSE file:')}\n\n${licenseText}\n`);
+    process.stdout.write(`\n    ${underline('Existing LICENSE file:')}\n\n`);
+    process.stdout.write(
+        boxen(
+            wrap(
+                licenseText.toString(), {
+                    width: 90
+                }),
+            {
+                borderStyle: 'round',
+                dimBorder: true,
+            })
+        + '\n');
 
 };
 
