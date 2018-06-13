@@ -1,6 +1,6 @@
 {
   "name": "licensed",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "description": "licensed is a command line interface to help you choose and add licenses to your projects",
   "main": "lib/index.js",
   "scripts": {
