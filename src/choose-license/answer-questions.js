@@ -1,8 +1,8 @@
-const fuzzy = require('fuzzy');
-const {registerPrompt, prompt} = require('inquirer');
-const autocompletePrompt = require('inquirer-autocomplete-prompt');
+const fuzzy                      = require('fuzzy');
+const {registerPrompt, prompt}   = require('inquirer');
+const autocompletePrompt         = require('inquirer-autocomplete-prompt');
 
-const {licenses} = require('../licenses');
+const {licenses}                 = require('../licenses');
 
 const {
     calculateScore,

@@ -1,11 +1,11 @@
-const {red} = require('chalk');
-const {prompt} = require('inquirer');
-const fullname = require('fullname');
+const {red}                 = require('chalk');
+const {prompt}              = require('inquirer');
+const fullname              = require('fullname');
 
-const {writeLicense} = require('../write-license');
+const {writeLicense}        = require('../write-license');
 
-const {answerQuestions} = require('./answer-questions');
-const {pickLicense} = require('./pick-license');
+const {answerQuestions}     = require('./answer-questions');
+const {pickLicense}         = require('./pick-license');
 
 
 /**

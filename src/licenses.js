@@ -1,5 +1,5 @@
-const {readFileSync} = require('fs');
-const {resolve} = require('path');
+const {readFileSync}    = require('fs');
+const {resolve}         = require('path');
 
 const licensesFolder = resolve(__dirname, '..', 'assets', 'licenses');
 

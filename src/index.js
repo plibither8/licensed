@@ -1,16 +1,16 @@
 #!/usr/bin/env node
-const meow = require('meow');
-
-const {chooseLicense} = require('./choose-license');
-const {searchLicense} = require('./search-license');
-const {generateList} = require('./generate-list');
+const meow              = require('meow');
+const {chooseLicense}   = require('./choose-license');
+const {searchLicense}   = require('./search-license');
+const {generateList}    = require('./generate-list');
 const {
     licenseFileExists,
     licenseExistsPrompt,
     viewExistingLicense,
     licenseExistsExit,
     licenseExistsPromptChoices
-} = require('./license-exists.js');
+}                       = require('./license-exists.js');
+
 
 const cli = meow(`Usage:
     $ licensed                  # Brings up an option to start a questionnaire or choose from a list of available licenses

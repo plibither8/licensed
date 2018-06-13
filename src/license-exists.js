@@ -1,9 +1,7 @@
-const {resolve} = require('path');
-const {existsSync} = require('fs');
-const {prompt} = require('inquirer');
-const {red} = require('chalk');
-const {readFileSync} = require('fs');
-const {underline} = require('chalk');
+const {red, underline}              = require('chalk');
+const {existsSync, readFileSync}    = require('fs');
+const {prompt}                      = require('inquirer');
+const {resolve}                     = require('path');
 
 const choices = [
     'Do not create a new LICENSE file',

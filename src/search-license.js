@@ -1,10 +1,10 @@
-const {red} = require('chalk');
-const fuzzy = require('fuzzy');
-const {prompt} = require('inquirer');
-const fullname = require('fullname');
+const {prompt}          = require('inquirer');
+const {red}             = require('chalk');
+const fullname          = require('fullname');
+const fuzzy             = require('fuzzy');
 
-const {licenses} = require('./licenses');
-const {writeLicense} = require('./write-license');
+const {licenses}        = require('./licenses');
+const {writeLicense}    = require('./write-license');
 
 exports.searchLicense = ({input}, flags) => {
     let searchTerm = '';
