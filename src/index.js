@@ -1,15 +1,16 @@
 #!/usr/bin/env node
 const meow              = require('meow');
+
 const {chooseLicense}   = require('./choose-license');
-const {searchLicense}   = require('./search-license');
-const {generateList}    = require('./generate-list');
+const {searchLicense}   = require('./initiators/search-license');
+const {generateList}    = require('./initiators/generate-list');
 const {
     licenseFileExists,
     licenseExistsPrompt,
     viewExistingLicense,
     licenseExistsExit,
     licenseExistsPromptChoices
-}                       = require('./license-exists.js');
+}                       = require('./initiators/license-exists.js');
 
 
 const cli = meow(`Usage:

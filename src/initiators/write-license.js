@@ -2,7 +2,7 @@ const {resolve}     = require('path');
 const {red, green}  = require('chalk');
 const {writeFile}   = require('fs');
 
-const {licenses}    = require('./licenses');
+const {licenses}    = require('../licenses');
 
 exports.writeLicense = (fullName, licenseName, year) => {
 

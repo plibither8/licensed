@@ -1,6 +1,7 @@
-const {licenses}        = require('./licenses');
-const {pickLicense}     = require('./choose-license/pick-license.js');
 const {green}           = require('chalk');
+
+const {licenses}        = require('../licenses');
+const {pickLicense}     = require('../choose-license/pick-license.js');
 
 exports.generateList = () => {
 
