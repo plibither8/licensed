@@ -1,6 +1,6 @@
 # licensed
 
-[![Build Status](	https://img.shields.io/travis/plibither8/licensed/master.svg?style=flat-square)](https://travis-ci.org/plibither8/licensed)
+[![Build Status](https://img.shields.io/travis/plibither8/licensed/master.svg?style=flat-square)](https://travis-ci.org/plibither8/licensed)
 [![Number of downloads](https://img.shields.io/npm/dt/licensed.svg?style=flat-square)](https://www.npmjs.com/package/licensed)
 [![Licence](https://img.shields.io/npm/l/licensed.svg?maxAge=2592000&style=flat-square)](LICENSE)
 [![Number of dependencies](https://img.shields.io/david/plibither8/licensed.svg?maxAge=2592000&style=flat-square)](https://www.npmjs.com/package/licensed?activeTab=dependencies)
@@ -66,7 +66,7 @@ To lint your code, run
 $ npm run lint
 ```
 
-...and to build your files to `/lib` directory, run
+...and to build your files to `lib/` directory, run
 
 ```sh
 $ npm run build
@@ -84,7 +84,7 @@ $ npm run build
 
 ## Contributions
 
-* If you are aware of more licenses, help expand the list by suggesting or creating a pull request with the license text and name added to the `assets/licenses`, `src/licenses.js` and other respective files.
+* If you are aware of more licenses, help expand the list by suggesting or creating a pull request with the license text and name added to `assets/licenses`, `src/licenses.js` and other respective files.
 * Any other positive suggestions for this project are welcome :)
 
 **Make sure to check out [CONTRIBUTING.md](.github/CONTRIBUTING.md).**
