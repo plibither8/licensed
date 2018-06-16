@@ -11,10 +11,16 @@ const choices = [
     'Overwrite current LICENSE file and create a new one'
 ];
 
+/**
+ * Boolean: Checks whether `LICENSE` file exists in directory or not
+ */
 exports.licenseFileExists = () => {
     return existsSync(resolve(process.cwd(), 'LICENSE'));
 };
 
+/**
+ * List-prompt to enter how to proceed
+ */
 exports.licenseExistsPrompt = async () => {
     process.stdout.write('\n');
 
@@ -32,6 +38,9 @@ exports.licenseExistsPrompt = async () => {
     return licenseExistsResponse;
 };
 
+/**
+ * cat the currently present LICENSE file
+ */
 exports.viewExistingLicense = () => {
 
     const licenseText = readFileSync(resolve(process.cwd(), 'LICENSE'));
@@ -50,6 +59,9 @@ exports.viewExistingLicense = () => {
 
 };
 
+/**
+ * Abort the process
+ */
 exports.licenseExistsExit = () => {
     process.stdout.write(red.bold('\n❌ LICENSE file not created.\n'));
 };
