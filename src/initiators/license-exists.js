@@ -26,7 +26,7 @@ exports.licenseExistsPrompt = async () => {
 
     const {licenseExistsResponse} = await prompt([
         {
-            type: 'rawlist',
+            type: 'list',
             name: 'licenseExistsResponse',
             message: 'A LICENSE file already exists in this directory. Please choose how to proceed:',
             choices: choices,
