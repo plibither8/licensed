@@ -5,7 +5,7 @@
 [![Licence](https://img.shields.io/npm/l/licensed.svg?maxAge=2592000&style=flat-square)](LICENSE)
 [![Number of dependencies](https://img.shields.io/david/plibither8/licensed.svg?maxAge=2592000&style=flat-square)](https://www.npmjs.com/package/licensed?activeTab=dependencies)
 
-[![Made_with_love_in India](https://img.shields.io/badge/Made_with_love_in-India-DC3545.svg?style=flat-square)](https://madewithlove.org.in/)
+[![Made with Love in India](https://madewithlove.org.in/badge.svg)](https://madewithlove.org.in/)
 
 > ⚖ licensed is a simple, interactive command line interface to help you choose and quickly add a `LICENSE` file to your project.
 
