@@ -1,8 +1,6 @@
-<div align='center'>
-
 <img src="assets/logo.png" height="100px" align='center'>
 
-<br>
+<div align='center'>
 
 [![Build Status](https://img.shields.io/travis/plibither8/licensed/master.svg?style=flat-square)](https://travis-ci.org/plibither8/licensed)
 [![Number of downloads](https://img.shields.io/npm/dt/licensed.svg?style=flat-square)](https://www.npmjs.com/package/licensed)
