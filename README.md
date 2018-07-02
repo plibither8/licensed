@@ -12,7 +12,7 @@
 
 </div>
 
-> ⚖ a simple, interactive command line interface to help you choose and quickly add a `LICENSE` file to your project.
+> ⚖ licensed is a simple, interactive command line interface to help you choose and quickly add a `LICENSE` file to your project.
 
 
 ![licensed demo gif](assets/demo.gif)
