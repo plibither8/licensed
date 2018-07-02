@@ -1,11 +1,16 @@
 # licensed
 
+<center>
+<img src="assets/logo.png" height="100px">
+
 [![Build Status](https://img.shields.io/travis/plibither8/licensed/master.svg?style=flat-square)](https://travis-ci.org/plibither8/licensed)
 [![Number of downloads](https://img.shields.io/npm/dt/licensed.svg?style=flat-square)](https://www.npmjs.com/package/licensed)
 [![Licence](https://img.shields.io/npm/l/licensed.svg?maxAge=2592000&style=flat-square)](LICENSE)
 [![Number of dependencies](https://img.shields.io/david/plibither8/licensed.svg?maxAge=2592000&style=flat-square)](https://www.npmjs.com/package/licensed?activeTab=dependencies)
 
-[![Made with Love in India](https://madewithlove.org.in/badge.svg)](https://madewithlove.org.in/)
+[![Made with Love in India](assets/mwlii-badge.svg)](https://madewithlove.org.in/)
+
+</center>
 
 > ⚖ licensed is a simple, interactive command line interface to help you choose and quickly add a `LICENSE` file to your project.
 
