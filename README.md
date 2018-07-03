@@ -13,7 +13,7 @@
 </div>
 
 <p align='center'>
-    <img src='https://nodei.co/npm/licensed.svg' alt='npm'>
+    <img src='https://nodei.co/npm/licensed.png' alt='npm'>
 </p>
 
 > ⚖ licensed is a simple, interactive command line interface to help you choose and quickly add a `LICENSE` file to your project.
