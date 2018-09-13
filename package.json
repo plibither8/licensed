@@ -42,5 +42,6 @@
     "inquirer-autocomplete-prompt": "^0.12.2",
     "meow": "^5.0.0",
     "word-wrap": "^1.2.3"
-  }
+  },
+  "prefer-global": true
 }
