@@ -104,3 +104,17 @@ $ npm run build
 ## Acknowledgements
 
 * [Manuel Spagnolo](https://github.com/shikaan) for implementing the questionnaire.
+
+## Donate
+
+licensed was made by me during my study-breaks and free time. If you like and have enjoyed it, please consider donating a small amount (any amount will be really appreciated!) to support and sustain its development. Thank you!
+
+[![Donate](https://img.shields.io/badge/donate-PayPal-blue.svg?style=for-the-badge&logo=paypal)](https://paypal.me/plibither8)
+
+[![Buy Me A Coffee](https://www.buymeacoffee.com/assets/img/custom_images/purple_img.png)](https://www.buymeacoffee.com/plibither8)
+
+---
+
+## License
+
+[MIT](LICENSE)
