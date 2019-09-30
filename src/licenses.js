@@ -80,17 +80,6 @@ const licenses = {
             stateChanges: false,
             trademark: true
         }
-    },
-    'Unlicense': {
-        value: readFileSync(resolve(licensesFolder, 'Unlicense'), 'utf-8'),
-        attributes: {
-            patent: false,
-            disclose: false,
-            licenseAndCopyright: false,
-            sameLicense: false,
-            stateChanges: false,
-            trademark: false
-        }
     }
 };
 
