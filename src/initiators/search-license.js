@@ -42,7 +42,7 @@ exports.searchLicense = ({input}, flags) => {
      * If called with a year flag use
      * that value else get current year
      */
-    const year = flags.hasOwnProperty('y') ? flags.y : (new Date).getFullYear();
+    const year = 'y' in flags ? flags.y : (new Date).getFullYear();
 
     /**
      * If there is only string in

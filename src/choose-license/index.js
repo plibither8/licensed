@@ -52,7 +52,7 @@ exports.chooseLicense = async (flags) => {
 
     if(licenseName) {
 
-        const year = flags.hasOwnProperty('y') ? flags.y : (new Date).getFullYear();
+        const year = 'y' in flags ? flags.y : (new Date).getFullYear();
         writeLicense(fullName, licenseName, year);
 
     } else {
