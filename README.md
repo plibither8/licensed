@@ -93,6 +93,7 @@ $ npm run build
 * ISC
 * MIT
 * Mozilla Public License 2.0
+* Unlicense
 
 ## Contributions
 
